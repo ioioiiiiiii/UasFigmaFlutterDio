@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tesb/categories.dart';
+import 'package:tesb/setting.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,9 +8,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[50],
+      backgroundColor: const Color.fromARGB(255, 220, 202, 255),
       drawer: Drawer(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 220, 202, 255),
         child: ListView(
           children: [
             const Padding(padding: EdgeInsets.only(top: 30)),
@@ -28,8 +29,11 @@ class HomePage extends StatelessWidget {
                 Icons.home_filled,
                 color: Colors.black,
               ),
-              onTap: () {},
-              splashColor: Colors.blue[200],
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const HomePage()));
+              },
+              splashColor: Colors.deepPurple,
             ),
             ListTile(
               title: const Text('Categories'),
@@ -38,10 +42,12 @@ class HomePage extends StatelessWidget {
                 color: Colors.red,
               ),
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Categories()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Categories()));
               },
-              splashColor: Colors.blue[200],
+              splashColor: Colors.deepPurple,
             ),
             ListTile(
               title: const Text('Element'),
@@ -50,14 +56,14 @@ class HomePage extends StatelessWidget {
                 color: Colors.blue,
               ),
               onTap: () {},
-              splashColor: Colors.blue[200],
+              splashColor: Colors.deepPurple,
             ),
             ListTile(
               title: const Text('Cards'),
               leading: const Icon(Icons.my_library_books_rounded,
                   color: Color.fromARGB(255, 188, 28, 28)),
               onTap: () {},
-              splashColor: Colors.blue[200],
+              splashColor: Colors.deepPurple,
             ),
             ListTile(
               title: const Text('Setting'),
@@ -65,18 +71,20 @@ class HomePage extends StatelessWidget {
                 Icons.settings,
                 color: Colors.deepPurple,
               ),
-              onTap: () {},
-              splashColor: Colors.blue[200],
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Setting()));
+              },
+              splashColor: Colors.deepPurple,
             ),
             ListTile(
-              title: const Text('Profile'),
-              leading: const Icon(
-                Icons.account_circle_sharp,
-                color: Colors.lightBlue,
-              ),
-              onTap: () {},
-              splashColor: Colors.blue[200],
-            ),
+                title: const Text('Profile'),
+                leading: const Icon(
+                  Icons.account_circle_sharp,
+                  color: Colors.lightBlue,
+                ),
+                onTap: () {},
+                splashColor: Colors.deepPurple),
             ListTile(
               title: const Text('Register'),
               leading: const Icon(
@@ -84,19 +92,18 @@ class HomePage extends StatelessWidget {
                 color: Color.fromARGB(255, 205, 0, 0),
               ),
               onTap: () {},
-              splashColor: Colors.blue[200],
+              splashColor: Colors.deepPurple,
             ),
             const Divider(
               color: Colors.black,
             ),
             ListTile(
-              title: const Text('Getting Started'),
-              leading: const Icon(
-                Icons.rocket_launch,
-              ),
-              onTap: () {},
-              splashColor: Colors.blue[200],
-            )
+                title: const Text('Getting Started'),
+                leading: const Icon(
+                  Icons.rocket_launch,
+                ),
+                onTap: () {},
+                splashColor: Colors.deepPurple)
           ],
         ),
       ),
@@ -144,7 +151,9 @@ class HomePage extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                   hintText: 'What Are You Looking For?',
+                  hintStyle: TextStyle(color: Colors.black),
                   suffixIcon: Icon(Icons.search),
+                  suffixIconColor: Colors.black,
                   border: OutlineInputBorder()),
             ),
           ),
@@ -152,7 +161,8 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6), color: Colors.white),
+                  borderRadius: BorderRadius.circular(6),
+                  color: const Color.fromARGB(255, 238, 219, 255)),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
@@ -183,7 +193,7 @@ class HomePage extends StatelessWidget {
               width: 350,
               height: 200,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: const Color.fromARGB(255, 238, 219, 255),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
@@ -227,7 +237,7 @@ class HomePage extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.white),
+                    color: const Color.fromARGB(255, 238, 219, 255)),
                 width: 170,
                 height: 220,
                 child: Column(
@@ -266,7 +276,7 @@ class HomePage extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.white),
+                    color: const Color.fromARGB(255, 238, 219, 255)),
                 width: 170,
                 height: 220,
                 child: Column(
@@ -307,7 +317,7 @@ class HomePage extends StatelessWidget {
               width: 350,
               height: 200,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: const Color.fromARGB(255, 238, 219, 255),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
@@ -344,7 +354,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Padding(
@@ -353,7 +363,8 @@ class HomePage extends StatelessWidget {
               height: 280,
               width: 400,
               decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
+                  color: const Color.fromARGB(255, 238, 219, 255),
+                  borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
                   Padding(
@@ -373,11 +384,11 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsets.all(8),
-                        child: Container(
+                        padding: const EdgeInsets.all(8),
+                        child: SizedBox(
                           height: 20,
                           width: 200,
-                          child: Text(
+                          child: const Text(
                             'Ada Kacang Dalam Tanah',
                             style: TextStyle(
                               fontSize: 15,
@@ -386,7 +397,8 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                          onPressed: () {}, child: Text('Baca Selengkapnya'))
+                          onPressed: () {},
+                          child: const Text('Baca Selengkapnya'))
                     ],
                   )
                 ],
